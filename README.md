@@ -1,4 +1,4 @@
-# trabalho-senai
+trabalho-senai
 Cauã França
 Gustavo Justen
 João Bernardo
