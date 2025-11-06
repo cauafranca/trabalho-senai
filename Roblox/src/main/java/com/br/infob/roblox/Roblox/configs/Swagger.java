@@ -10,7 +10,7 @@ import io.swagger.v3.oas.annotations.info.Info;
     info = @Info(
         title = "Roblox",
         version = "1.0",
-        description = "Email para contato: caua.f.carvalho6@aluno.senai.br"
+        description = "Integrantes: João Bernardo, Cauã, Gustavo Justen e Miguel."
     )
 )
 public class Swagger {
