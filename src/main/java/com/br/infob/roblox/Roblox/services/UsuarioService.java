@@ -29,4 +29,19 @@ public class UsuarioService {
         }
         return null;
     }
+
+    public Usuario buscar(Integer id) {
+            return usuarioRepository.findById(id).get();
+    }
+
+    public boolean atualizarBoolean(Usuario usuario, Integer id) {
+            if (usuarioRepository.existsById(id)) {
+                usuario.setId(id);
+                usuarioRepository.save(usuario);
+                return true;
+            }
+            
+            return false;
+        }
+
 }
