@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.br.infob.roblox.Roblox.models.Usuario;
@@ -25,8 +26,8 @@ public class UsuarioController {
     }
 
     @PostMapping("/login")
-    public String login(@RequestBody Usuario usuario) {
-        boolean logou = usuarioService.Login(usuario.getEmail(), usuario.getSenha());
+    public String login(@RequestParam String email, String senha) {
+        boolean logou = usuarioService.Login(email, senha);
         if (logou) {
             return "Login realizado com sucesso";
         }
