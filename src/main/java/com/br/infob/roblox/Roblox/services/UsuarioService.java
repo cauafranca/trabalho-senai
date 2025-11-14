@@ -11,11 +11,12 @@ public class UsuarioService {
     @Autowired
     public UsuarioRepository usuarioRepository;
  
-    public boolean Login(String email, String senha) {
-        if (email.equals("luizh@email.com") && senha.equals("1234")) {
-            return true;
+    public String login(String email, String senha) {
+        Usuario usuario = usuarioRepository.findByEmail(email);
+        if (email.equals(usuario.getEmail()) && senha.equals(usuario.getSenha())) {
+            return "Login efetuado com sucesso";
         }
-        return false;
+        return "falha ao realizar o acesso";
     }
     
     public Usuario cadastro(Usuario usuario) {

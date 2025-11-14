@@ -27,11 +27,8 @@ public class UsuarioController {
 
     @PostMapping("/login")
     public String login(@RequestParam String email, String senha) {
-        boolean logou = usuarioService.Login(email, senha);
-        if (logou) {
-            return "Login realizado com sucesso";
-        }
-        return "Email ou senha incorretos";
+       return usuarioService.login(email, senha);
+        
     }
 
     @GetMapping("/buscar/{id}")
